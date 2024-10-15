@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", "sans-serif";
+    /* font-size: 16px; */
+}
+.loginBG{
+    background: url("../images/Login.jpg") no-repeat;
+}
+.registerBG{
+    background: url("../images/Register.jpg") no-repeat;
+}
+#mainContainer {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    width: 420px;
+    background: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: aliceblue;
+    padding: 30px 40px;
+    border-radius: 10px;
+}
+
+.container h1 {
+    color: #6B51B8;
+    font-size: 36px;
+    text-align: center;
+}
+
+.inputs {
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    position: relative;
+    border-radius: 40px;
+}
+
+.inputs input {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    padding: 20px 45px 20px 20px;
+    background: transparent;
+    outline: none;
+    border: 2px solid transparent;
+    border-image: linear-gradient(to bottom right, #6B51B8, #ccc5e4);
+    border-image-slice: 2;
+    color: #6B51B8;
+}
+
+
+
+.inputs input::placeholder {
+    color: #6B51B8;
+}
+
+.inputs i {
+    position: absolute;
+    color: #6B51B8;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+.remember-forgot label {
+    color: #ccc5e4;
+}
+
+.remember-forgot label input {
+    accent-color: #ccc5e4;
+    margin-right: 3px;
+}
+
+.a {
+    color: #ccc5e4;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #ccc5e4;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #423d8f;
+    font-weight: 600;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    /* Smooth transition */
+}
+
+.btn:hover {
+    color: #ccc5e4;
+    background: #423d8f;
+}
+
+.register-now {
+    color: #ccc5e4;
+    font-size: 16px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+/* .inputs input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+} */

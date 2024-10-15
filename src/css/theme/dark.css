@@ -1,0 +1,66 @@
+/*                                      Dark                                */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", "sans-serif";
+    /* font-size: 16px; */
+}
+
+.container {
+    border: 2px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: aliceblue;
+}
+
+.container h1 {
+    color: #ccc5e4;
+}
+
+.inputs input {
+   
+    padding: 20px 45px 20px 20px;
+    background: transparent;
+    outline: none;
+    border: 2px solid transparent;
+    border-image-slice: 2;
+    border-image: linear-gradient(to bottom right, #423d8f, #ccc5e4);
+    color: #423d8f;
+}
+
+.inputs input::placeholder {
+    color: #423d8f;
+}
+
+.inputs i {
+    color: #423d8f;
+}
+
+.remember-forgot label {
+    color: #ccc5e4;
+}
+
+.remember-forgot label input {
+    accent-color: #ccc5e4;
+}
+
+.a {
+    color: #ccc5e4;
+}
+
+.btn {
+    color: #423d8f;
+    background: #ccc5e4;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    transition: background-color 0.5s ease, color 0.5s ease;
+    /* Smooth transition */
+}
+
+.btn:hover {
+    background: #ccc5e4;
+    color: #ccc5e4;
+}
+
+.register-now {
+    color: #423d8f;
+}
