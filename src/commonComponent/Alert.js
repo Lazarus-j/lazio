@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 const Alert = ({status, message, showAlert, onDismiss }) => {
     const [visible, setVisible] = useState(false);
     const alertStyle = status ? 'success' : 'error';
-console.log('alert');
+// console.log('alert');
     useEffect(() => {
         if (showAlert) {
             setVisible(true);  // Fade in

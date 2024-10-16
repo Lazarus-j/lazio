@@ -3,47 +3,38 @@ import { useEffect, useState } from "react";
 import Alert from "../../commonComponent/Alert";
 import Masking from "../../commonComponent/Masking";
 
-const Axios = ({ axiosObj, needCall }) => {
+const Axios = ({ axiosObj }) => {
     const [masking, maskingState] = useState(false);
     const [showAlert, setShowAlert] = useState(false);
     const [alertMessage, setAlertMessage] = useState('');  // Custom alert message
     const [alertStatus, setAlertStatus] = useState(true);  // Success or Error flag
-    const [axiosData, setAxiosData] = useState(null);
 
     const handleDismissAlert = () => {
         setShowAlert(false);
     };
-
     useEffect(() => {
         const fetchData = async () => {
-            if (!axiosObj || !axiosObj.needCall || !axiosObj.url) return;
-
+            if (!axiosObj || axiosObj.url === '') {  return; }
             maskingState(true);
             let fetchedData = await fnAxiosByType(axiosObj);  // Pass full axiosObj
-            console.log(fetchedData)
-            if (fetchedData) {
+            if (fetchedData && fetchedData.status) {
                 maskingState(false);
-                setAlertMessage(fetchedData.message || 'Success');
                 setAlertStatus(true);  // Assuming success if data is fetched
-                setAxiosData(fetchedData.data);
-                if (fetchedData.message)
+                if (fetchedData.data && fetchedData.data.length > 0 && (typeof axiosObj.getReturnData === 'function'))
+                    axiosObj.getReturnData(fetchedData.data);
+                if (fetchedData.message) {
+                    setAlertMessage(fetchedData.message);
                     setShowAlert(true);
-                needCall(false);
+                }
             } else {
                 maskingState(false);
-                setAlertMessage('Error fetching data');
+                setAlertMessage(fetchedData.message || 'Error while fetching data');
                 setAlertStatus(false);
                 setShowAlert(true);
-                needCall(false);
-
             }
         };
         fetchData();
-    }, [axiosObj, needCall]);  // Dependency array includes axiosObj
-
-    if (axiosObj.getReturnData) {
-        axiosObj.getReturnData(axiosData);
-    }
+    }, [axiosObj]);  // Dependency array includes axiosObj 
 
     return (
         <>
