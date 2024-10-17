@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Alert from "../../commonComponent/Alert";
-import Masking from "../../commonComponent/Masking";
+import Alert from "./Alert";
+import Masking from "./Masking";
 
 const Axios = ({ axiosObj }) => {
     const [masking, maskingState] = useState(false);
@@ -28,7 +28,7 @@ const Axios = ({ axiosObj }) => {
                 }
             } else {
                 maskingState(false);
-                setAlertMessage(fetchedData.message || 'Error while fetching data');
+                setAlertMessage((fetchedData&&fetchedData.message) || 'Error while fetching data');
                 setAlertStatus(false);
                 setShowAlert(true);
             }

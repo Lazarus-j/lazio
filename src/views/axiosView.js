@@ -1,7 +1,7 @@
 import '../css/login.css'
 import '../css/theme/light.css'
 import React, { useState } from 'react';
-import Axios from '../js/commonJS/Axios';
+import Axios from '../commonComponent/Axios';
 
 function AxiosView() {
 
