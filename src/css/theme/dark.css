@@ -7,6 +7,19 @@
     /* font-size: 16px; */
 }
 
+:root {
+    --light: #ccc5e4;
+    --dark: #6B51B8;
+}
+
+.colDark {
+    color: var(--dark);
+}
+
+.colLight {
+    color: var(--dark);
+}
+
 .container {
     border: 2px solid rgba(255, 255, 255, .2);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
@@ -18,7 +31,7 @@
 }
 
 .inputs input {
-   
+
     padding: 20px 45px 20px 20px;
     background: transparent;
     outline: none;
@@ -32,7 +45,7 @@
     color: #423d8f;
 }
 
-.inputs i {
+.inputs .i {
     color: #423d8f;
 }
 
@@ -48,7 +61,7 @@
     color: #ccc5e4;
 }
 
-.btn {
+.btnDark {
     color: #423d8f;
     background: #ccc5e4;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
@@ -56,9 +69,9 @@
     /* Smooth transition */
 }
 
-.btn:hover {
+.btnDark:hover {
     background: #ccc5e4;
-    color: #ccc5e4;
+    color: #423d8f;
 }
 
 .register-now {

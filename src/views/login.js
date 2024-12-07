@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import Alert from '../commonComponent/Alert';
 import { useNavigate } from 'react-router-dom';
+import Alert from '../commonComponent/Alert';
+import Button from '../commonComponent/Button';
+import Input from '../commonComponent/Input';
 import '../css/login.css'
-import '../css/theme/dark.css'
+import dark from '../Modules/Dark.module.css'
 
 function Login() {
     const navigate = useNavigate();
@@ -34,14 +36,8 @@ function Login() {
                 <div className="container">
                     <form>
                         <h1>Login</h1>
-                        <div className="inputs">
-                            <input type="text" id="uId" placeholder="User-Id" className="input" required />
-                            <i className='bx bx-user'></i>
-                        </div>
-                        <div className="inputs">
-                            <input type="password" id="pass" placeholder="Password" className="input" required />
-                            <i className='bx bx-lock-alt'></i>
-                        </div>
+                        <Input id="uId" placeHolder="User-Id" iCol='dk' i="bx-user" className={dark.inputDark} required/>
+                        <Input id='pass' type='password' placeHolder="Password" iCol='dk' i='bx bx-lock-alt' className={dark.inputDark} required/>
                         <div className="remember-forgot">
                             <label>
                                 <input type="checkbox" id="reMe" /> Remember me
@@ -49,14 +45,12 @@ function Login() {
                             <p className='a' onClick={handleShowAlertFromPass}>Forgot password?</p>
                         </div>
                     </form>
-                    <button className="btn" id="loginBtn" onClick={handleShowAlert}>Login</button>
+                    <Button className={dark.btnDark} id="loginBtn" onClick={handleShowAlert} text='Login'/>
                     <div className="register-now">
-                        Don't have an account? <p className='a' onClick={goToRegister}>Register Now</p>
+                        <label>Don't have an account?</label> <p className='a' onClick={goToRegister}>Register Now</p>
                     </div>
                 </div>
             </div>
-
-            {/* Show the custom alert */}
             <Alert status={alertStatus} message={alertMessage} showAlert={showAlert} onDismiss={handleDismissAlert} />
         </>
     );

@@ -1,7 +1,8 @@
 import '../css/login.css'
-import '../css/theme/light.css'
+import btnClass from '../Modules/button.module.css'
 import React, { useState } from 'react';
 import Axios from '../commonComponent/Axios';
+import Button from '../commonComponent/Button';
 
 function AxiosView() {
 
@@ -20,8 +21,10 @@ function AxiosView() {
     return (
         <>
             <div id="mainContainer" className='registerBG'>
-                <button className="btn"  onClick={testAxios_1}>Test 1</button>
-                <button className="btn"  onClick={testAxios_2}>Test 2</button>
+                {/* <button className="btn"  onClick={testAxios_1}>Test 1</button>
+                <button className="btn"  onClick={testAxios_2}>Test 2</button> */}
+                <Button className={btnClass.btnDark}  onClick={testAxios_1} text="Test 1"/>
+                <Button  onClick={testAxios_2} text='Test 2'/>
             </div>
             <Axios axiosObj={axiosObj } reset={fnResetAxios} />
         </>

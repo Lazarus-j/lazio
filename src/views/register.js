@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Masking from '../commonComponent/Masking';
+import Input from '../commonComponent/Input';
+import Button from '../commonComponent/Button';
 import '../css/login.css'
-import '../css/theme/light.css'
+import dark from '../Modules/Dark.module.css'
+import { fnGetElementById } from '../js/common';
+
 
 function Register() {
     const [needMask,maskState]=useState(false);
@@ -19,35 +23,21 @@ function Register() {
                 <div className="container">
                     <form id="regForm">
                         <h1>Register</h1>
-                        <div className="inputs">
-                            <input type="text" id="name" placeholder="Name" className=" input" required />
-                        </div>
-                        <div className="inputs">
-                            <input type="text" id="uId" placeholder="Phone-Number" className=" input" pattern="\d{10}" required />
-                        </div>
-                        <div className="inputs">
-                            <input type="email" id="emailId" placeholder="Email-Id" className=" input" required />
-                        </div>
-                        <div className="inputs">
-                            <input type="date" id="dob" placeholder="DOB" className=" input" required />
-                        </div>
-                        <div className="inputs">
-                            <input type="text" id="gender" placeholder="Gender" className=" input" required />
-                        </div>
-                        <div className="inputs">
-                            <input type="text" id="pass" placeholder="Password" className=" input" required />
-                        </div>
-                        <div className="inputs">
-                            <input type="text" id="rPass" placeholder="Re-Password" className=" input" required />
-                        </div>
-                        <div className="remember-forgot" onClick={goToAxiosView}>
+                        <Input id='name'  placeHolder="Name" required/>
+                        <Input id='uId' placeHolder="Phone-Number"   required/>
+                        <Input id='emailId' type='email' placeHolder="Email-Id" required/>
+                        <Input id='dob' type='date' placeHolder="Password" required/>
+                        <Input id='gender' placeHolder="Gender" required/>
+                        <Input id='pass' type='password' placeHolder="Password"  required/>
+                        <Input id='rPass' type='password' placeHolder="Re-Password" required/>
+                        <div className="remember-forgot" >
                             <label>
                                 <input type="checkbox" id="reMe" required />
-                                <p className='a'> Aggre to terms and conditions</p>
+                                <p className='a' onClick={goToAxiosView}> Aggre to terms and conditions</p>
                             </label>
                         </div>
                     </form>
-                    <button className="btn" id="registerBtn" onClick={fnMask}>Register</button>
+                    <Button className={dark.btnDark} id="registerBtn" onClick={fnMask} text='Register'/>
                 </div>
             </div>
             <Masking mask={needMask}/>

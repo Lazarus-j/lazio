@@ -1,0 +1,23 @@
+.btnDark {
+    color: #ccc5e4;
+    background: #6B51B8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.btnDark:hover {
+    color: #6B51B8;
+    background: #ccc5e4;
+}
+
+.inputDark{
+    outline: none;
+    background: transparent;
+    border: 2px solid transparent;
+    border-image: linear-gradient(to bottom right, #6B51B8, #ccc5e4);
+    color: #6B51B8;
+    border-image-slice: 0.5;
+}
+
+.inputs .inputDark::placeholder {
+    color: #6B51B8;
+}

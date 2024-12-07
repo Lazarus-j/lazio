@@ -12,7 +12,6 @@ function App() {
       <Routes>
         <Route path='/' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
-        <Route path='/' element={<Login/>}/>
         <Route path='/AxiosView' element={<AxiosView/>}/>
       </Routes>
      </Router>
